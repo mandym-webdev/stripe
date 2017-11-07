@@ -1,0 +1,96 @@
+
+
+
+<div class="container">
+  <% if user_signed_in? %> 
+
+    <h1 class="display-3">Exciting Events!</h1>
+
+    <h2 class="center">My Subscriptions</h2>
+
+  <% else %>
+
+    <div class="jumbotron">
+      <h1 class="display-3">Exciting Events!</h1>
+      <p class="lead">Welcome to Exciting Events, the hottest events club in the Bay Area!  Choose from 3 membership options to attend the events that are most important to you!</p>
+      <p class="lead">
+         <%= link_to 'Join Now!', new_user_registration_path, class: "btn btn-success btn-lg" %>
+      </p>
+      <hr class="my-4">
+      <h5>Already a Member? <%= link_to 'Sign In', new_user_session_path %> </h5>
+    </div>
+
+    <h2 >Membership Options</h2>
+
+  <% end %>
+
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h4 class="text-center">BASIC PLAN</h4>
+        </div>
+        <div class="panel-body text-center">
+          <p class="lead"><strong>$19.99 / month</strong></p>
+        </div>
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">Private parties every other Friday at the hottest bars in the Bay Area!</li>
+          <li class="list-group-item">Unlimited guests</li>
+          <li class="list-group-item">Guest cost: $19.99/month</li>
+        </ul>
+        <div class="panel-footer">
+          <% if user_signed_in? %> 
+            <%= link_to 'Subscribe Now!', '#', class: "btn btn-lg btn-block btn-danger" %>
+          <% else %>
+            <%= link_to 'Join Now!', new_user_registration_path, class: "btn btn-lg btn-block btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4 class="text-center">CLASSIC PLAN</h4>
+        </div>
+        <div class="panel-body text-center">
+          <p class="lead"><strong>$99.99 / month</strong></p>
+        </div>
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">Front of line access to the best restaurants in the Bay Area! </li>
+          <li class="list-group-item">5 Guests Free!</li>
+          <li class="list-group-item">Additional Guests: $19.99/month</li>
+        </ul>
+        <div class="panel-footer">
+          <% if user_signed_in? %> 
+            <%= link_to 'Subscribe Now!', '#', class: "btn btn-lg btn-block btn-info" %>
+          <% else %>
+            <%= link_to 'Join Now!', new_user_registration_path, class: "btn btn-lg btn-block btn-info" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h4 class="text-center">MODERN PLAN</h4>
+        </div>
+        <div class="panel-body text-center">
+          <p class="lead"><strong>$199.99 / month</strong></p>
+        </div>
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">VIP access to concerts, lounges, and events, including personal chauffeur.</li>
+          <li class="list-group-item">5 Guests Free!</li>
+          <li class="list-group-item">Additional Guests: $19.99</li>
+        </ul>
+        <div class="panel-footer">
+          <% if user_signed_in? %> 
+            <%= link_to 'Subscribe Now!', '#', class: "btn btn-lg btn-block btn-success" %>
+          <% else %>
+            <%= link_to 'Join Now!', new_user_registration_path, class: "btn btn-lg btn-block btn-success" %>
+          <% end %> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

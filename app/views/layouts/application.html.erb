@@ -9,11 +9,22 @@
   </head>
 
   <body>
+    <div class="container">
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <nav>
+        <% if user_signed_in? %> 
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <% end %>
+      </nav>  
 
-    <%= yield %>
+      <span class="notice"><%= notice %></p>
+      <span class="alert"><%= alert %></p>
+
+      <%= yield %>
+
+    </div>
+
+    
     
   </body>
 </html>
