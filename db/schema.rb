@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 20171107172953) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "stripe_id"
+    t.string   "card_brand"
+    t.string   "card_last4"
+    t.string   "card_exp_month"
+    t.string   "card_exp_year"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree

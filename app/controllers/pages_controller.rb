@@ -1,9 +1,6 @@
 class PagesController < ApplicationController
 
-  def home 
-  end
-
-  def subscription  
+  def plan 
   end
 
 end
